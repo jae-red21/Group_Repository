@@ -53,7 +53,22 @@ int main()
             cout << num << " = "  << average << endl;
         }
     
+    else 
+        {
+            cout << num << " is not a prime number" << endl;
+            cout << "Prime factors of N are: ";
+
+            for (int i = 2; i <= num; i++)
+            {
+                while (num % i == 0) 
+                {
+                    cout << i << " ";
+                    num /= i; 
+                }
+            }
+        }
     }
+    
     return 0;
 }
     
