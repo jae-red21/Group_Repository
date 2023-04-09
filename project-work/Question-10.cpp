@@ -36,8 +36,24 @@ int main() {
 
         case 2:
            
+            cout << "Enter the principal amount: $";
+            cin >> principal;
+            cout << "Enter the minimum interest rate (%): ";
+            cin >> min_rate;
+            cout << "Enter the maximum interest rate (%): ";
+            cin >> max_rate;
+            cout << "Enter the number of years: ";
+            cin >> year;
+            cout << "Enter the annual deposit amount: $";
+            cin >> deposit;
 
-           
+            for (int i = 1; i <= year; i++) 
+            {
+                rate = min_rate + (max_rate - min_rate) * (i - 1) / (year - 1);
+                balance = principal * pow(1 + rate / 100, i) + deposit * ((pow(1 + rate / 100, i) - 1) / (rate / 100));
+                cout << "Year " << i << ": $" << balance << endl;
+            }
+               
             break;
 
         default:
