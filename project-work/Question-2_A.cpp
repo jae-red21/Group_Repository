@@ -1,14 +1,17 @@
+// This program takes a character input and creates a diamond shape using letters from the alphabet
 #include <iostream>
 
 using namespace std;
 
 int main() 
 {
+     // Declare variables
     char letter, limit;
     int space = -1;
-    
+     // Get input from user
     cout << "Enter a letter or a digit: " << endl;
     cin >> letter;
+    // Determine the limit based on the input
   if(letter >= '1' && letter <= '9')
     {
         limit = '0';
@@ -27,6 +30,7 @@ int main()
         cout << "Invalid input." << endl;
         return 0;
     }
+     // Create the top half of the diamond
  for(char i = letter; i>=limit; i--)
     {
         for(char j=limit; j <= i; j++)
@@ -37,6 +41,7 @@ int main()
         {
             cout << " ";
         }
+      // Print the letters in descending order, skipping the input letter
      for(char j=i; j>=limit; j--)
         {
             if(j < letter)
@@ -45,7 +50,9 @@ int main()
         space+=2;
         cout << endl;
     }
+     // Decrease the space between characters for the bottom half of the diamond
  space -=4;
+     // Create the bottom half of the diamond
     for(char i = limit+1; i<=letter; i++)
     {
         for(char j=limit; j <= i; j++)
@@ -57,7 +64,7 @@ int main()
         {
             cout << " ";
         }
-
+ // Print the letters in descending order, skipping the input letter
         for(char j=i; j>=limit; j--)
         {
             if(j < letter)
