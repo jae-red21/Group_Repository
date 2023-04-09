@@ -1,3 +1,7 @@
+// This program allows the user to choose between two options:
+// 1. Calculate savings without annual deposits, using a fixed interest rate
+// 2. Calculate savings with annual deposits, using user-inputted values for principal, interest rate, annual deposit, and number of years
+// The program prompts the user for input and uses a switch statement to execute the chosen option.
 #include <iostream>
 #include <cmath>
 
@@ -5,26 +9,34 @@ using namespace std;
 
 int main() {
     
+    // Declare variables
+    
     int choice;
     double principal, min_rate, max_rate, deposit, rate, balance;
     int year;
-
+    
+    // Prompt user for choice
    
     cout << "Choose an option:" << endl;
     cout << "1. Calculate savings without annual deposits" << endl;
     cout << "2. Calculate savings with annual deposits" << endl;
     cin >> choice;
 
+        // Use switch statement to execute chosen option
+
     switch (choice)
     {
         case 1:
             rate = 0.05;
+            // Prompt user for principal 
 
             cout << "Enter the principal amount: $";
             cin >> principal;
-            
+            // Prompt user for number of years 
+
             cout << "Enter the number of years: ";
             cin >> year;
+            //calculate balance for each year using simple interest formula
 
             for(int i =1; i <= year; i++)
             {
@@ -35,6 +47,8 @@ int main() {
             break;
 
         case 2:
+                        // Prompt user for input: principal amount, minimum interest rate, maximum interest rate, number of years, and annual deposit amount
+
             cout << "Enter the principal amount: $";
             cin >> principal;
             cout << "Enter the minimum interest rate (%): ";
@@ -45,6 +59,7 @@ int main() {
             cin >> year;
             cout << "Enter the annual deposit amount: $";
             cin >> deposit;
+            // Calculate and print balance for each year using compound interest formula
 
             for (int i = 1; i <= year; i++) 
             {
