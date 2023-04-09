@@ -18,8 +18,20 @@ int main() {
     switch (choice)
     {
         case 1:
+            rate = 0.05;
 
+            cout << "Enter the principal amount: $";
+            cin >> principal;
             
+            cout << "Enter the number of years: ";
+            cin >> year;
+
+            for(int i =1; i <= year; i++)
+            {
+                balance = principal * (1 + rate)* i;
+                cout << "Year " << i << ": $" << balance << endl; 
+            }
+    
             break;
 
         case 2:
