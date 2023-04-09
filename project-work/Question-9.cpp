@@ -29,6 +29,30 @@ int main()
                 break;
             }
         }
+        if (is_prime) 
+        {
+            double sum = 0;
+            int count = 0;
+          
+            for (int i = 2; i < num-1; i++) 
+            {
+                
+                for (int j = 2; j <= sqrt(i); j++) 
+                {
+                 
+                    if (i % j == 0) 
+                    {
+                        i++; 
+                    }
+                }
+                sum += i; 
+                count++; 
+            }
+            double average = sum / count; 
+            cout << num << " is a prime number with an average value of prime numbers between 1 and "; 
+            cout << num << " = "  << average << endl;
+        }
+    
     }
     return 0;
 }
